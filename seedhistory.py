@@ -2,8 +2,11 @@ from matchup import Matchup
 
 class SeedHistory:
     def __init__(self):
-        MAX_SEED = 16
         self._records = {}
+        self._init_records()
+
+    def _init_records(self):
+        MAX_SEED = 16
         for seed in range(1, MAX_SEED+1):
             for opponent_seed in range(1, MAX_SEED+1):
                 matchup = Matchup(seed, opponent_seed)
