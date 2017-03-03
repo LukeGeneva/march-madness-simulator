@@ -9,3 +9,6 @@ class Matchup:
 
     def __hash__(self):
         return hash((self.seed, self.opponent_seed))
+
+    def reverse(self):
+        return Matchup(self.opponent_seed, self.seed)

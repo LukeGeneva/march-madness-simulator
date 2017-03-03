@@ -17,5 +17,11 @@ class TestSeedHistory(unittest.TestCase):
         record = self.history.record(self.matchup)
         self.assertEqual((1,0), record)
 
+    def test_record_win_adds_loss_for_losing_seed(self):
+        self.history.record_win(self.matchup.seed, self.matchup.opponent_seed)
+        losing_matchup = self.matchup.reverse()
+        record = self.history.record(losing_matchup)
+        self.assertEqual((0,1), record)
+
 if __name__ == '__main__':
     unittest.main()
