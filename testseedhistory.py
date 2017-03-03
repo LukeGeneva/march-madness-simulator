@@ -1,17 +1,20 @@
 import unittest
 from seedhistory import SeedHistory
+from matchup import Matchup
 
 class TestSeedHistory(unittest.TestCase):
 
     def test_record(self):
         history = SeedHistory()
-        record = history.record(1,1)
+        matchup = Matchup(1,1)
+        record = history.record(matchup)
         self.assertEqual((0,0), record)
 
     def test_record_win_adds_win_for_winning_seed(self):
         history = SeedHistory()
-        history.record_win(1, 16)
-        record = history.record(1, 16)
+        matchup = Matchup(1, 16)
+        history.record_win(matchup)
+        record = history.record(matchup)
         self.assertEqual((1,0), record)
 
 if __name__ == '__main__':
