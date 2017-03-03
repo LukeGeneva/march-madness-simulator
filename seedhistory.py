@@ -1,6 +1,7 @@
 from matchup import Matchup
 
 class SeedHistory:
+
     def __init__(self):
         self._records = {}
         self._init_records()
