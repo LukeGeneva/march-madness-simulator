@@ -15,6 +15,7 @@ class SeedHistory:
     def record(self, matchup):
         return self._records[matchup]
 
-    def record_win(self, matchup):
+    def record_win(self, winning_seed, losing_seed):
+        matchup = Matchup(winning_seed, losing_seed)
         wins, losses = self._records[matchup]
         self._records[matchup] = (wins+1, losses)

@@ -12,9 +12,10 @@ class TestSeedHistory(unittest.TestCase):
 
     def test_record_win_adds_win_for_winning_seed(self):
         history = SeedHistory()
-        matchup = Matchup(1, 16)
-        history.record_win(matchup)
-        record = history.record(matchup)
+        winning_seed = 1
+        losing_seed = 16
+        history.record_win(winning_seed, losing_seed)
+        record = history.record(Matchup(winning_seed, losing_seed))
         self.assertEqual((1,0), record)
 
 if __name__ == '__main__':
