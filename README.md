@@ -1,5 +1,5 @@
 # March Madness Simulator
-Program that completes a tournament bracket based on historical seed records.
+Program that completes a tournament bracket based on historical seed records. The winning team of each game is chosen at random, with the result weighted by how well each team's seed has done throughout the history of the tournament against the opponent's seed.
 
 ## Simulation
 Running `pick.py` will print out each simulated round of the tournament
